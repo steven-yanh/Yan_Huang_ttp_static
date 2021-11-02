@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Yan_Huang_ttp_static</title>
+</head>
+<body>
+    <h1 id="time"> </h1>
+    <span ></span>
+    <script>
+    displayTime();
+    function displayTime() 
+    {
+        var time = new Date();
+        var h = time.getHours();
+        if(h > 12)
+            h = h-12;
+        var m = time.getMinutes();
+        var s = time.getSeconds();
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById("time").innerHTML = `My name is Huang Yan and my Hobby is swimming. Current time is: ${h}:${m}:${s}`;
+        setTimeout(displayTime, 1000);
+    }
+    function checkTime(i) 
+    {
+        if (i < 10) 
+            i = "0" + i;  
+    return i;
+    }
+    </script>
+</body>
+
+
+</html>
